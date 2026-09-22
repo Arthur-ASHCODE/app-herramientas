@@ -1,0 +1,27 @@
+# Variables de entorno y credenciales
+.env
+
+# Logs
+storage/logs/*
+!storage/logs/.gitkeep
+
+# Cache
+storage/cache/*
+!storage/cache/.gitkeep
+
+# Archivos subidos por usuarios
+uploads/*
+!uploads/.gitkeep
+
+# Dependencias PHP
+/vendor/
+
+# Dependencias JavaScript
+/node_modules/
+
+# Configuración de VS Code
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
