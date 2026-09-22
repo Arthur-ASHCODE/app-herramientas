@@ -1,0 +1,431 @@
+Manual básico Git + GitHub
+1. ¿Qué hicimos con app-herramientas?
+
+Teníamos el proyecto local:
+
+C:\xampp\htdocs\App\app-base
+
+Primero inicializamos Git:
+
+git init
+
+Esto convirtió la carpeta en un repositorio Git local. Git comenzó a poder registrar versiones del proyecto.
+
+Después revisamos el estado:
+
+git status
+
+Creamos .gitignore para indicar qué archivos no queremos versionar, como credenciales, caché, logs, node_modules, etc.
+
+Preparamos los archivos:
+
+git add .
+
+Creamos nuestra primera versión:
+
+git commit -m "Inicio App Herramientas"
+
+Cambiamos la rama principal de master a main:
+
+git branch -M main
+
+Creamos un repositorio vacío en GitHub y conectamos nuestro repositorio local:
+
+git remote add origin https://github.com/Arthur-ASHCODE/app-herramientas.git
+
+Finalmente lo subimos:
+
+git push -u origin main
+
+El resultado es:
+
+PROYECTO LOCAL                         GITHUB
+
+app-base/                        app-herramientas
+    │                                  │
+    └── main ───── git push ────────► main
+2. Crear un proyecto completamente nuevo
+
+Supongamos que en unos meses creas:
+
+C:\xampp\htdocs\SistemaVentas
+
+Entras a esa carpeta desde VS Code.
+
+Paso 1 — Inicializar Git
+git init
+
+Solo se hace una vez por proyecto.
+
+Paso 2 — Crear .gitignore
+
+Por ejemplo:
+
+.env
+/vendor/
+/node_modules/
+storage/logs/*
+storage/cache/*
+
+Aquí colocas todo aquello que no quieras subir al repositorio.
+
+Paso 3 — Revisar
+git status
+
+Te permite saber qué archivos detectó Git.
+
+Paso 4 — Preparar archivos
+git add .
+
+El . significa todos los cambios del proyecto, respetando .gitignore.
+
+Paso 5 — Crear primer commit
+git commit -m "Inicio del proyecto"
+Paso 6 — Establecer main
+git branch -M main
+Paso 7 — Crear repositorio vacío en GitHub
+
+Por ejemplo:
+
+sistema-ventas
+
+No necesitas agregar desde GitHub README ni .gitignore si ya los tienes localmente.
+
+Paso 8 — Conectar Git local con GitHub
+
+GitHub te dará la URL correspondiente. Entonces:
+
+git remote add origin URL_DEL_REPOSITORIO
+
+Puedes comprobarla con:
+
+git remote -v
+Paso 9 — Primera subida
+git push -u origin main
+
+El -u establece la relación:
+
+main local ←→ origin/main
+
+Gracias a esto, las siguientes veces solamente necesitarás:
+
+git push
+Resumen: proyecto nuevo
+git init
+git status
+git add .
+git commit -m "Inicio del proyecto"
+git branch -M main
+git remote add origin URL_DEL_REPOSITORIO
+git push -u origin main
+
+Esto es principalmente configuración inicial. No tienes que repetirlo todos los días.
+
+3. Trabajo diario
+
+Este será probablemente el flujo que más vas a utilizar.
+
+Supongamos que mañana abres app-herramientas y empiezas a programar.
+
+No necesitas ejecutar:
+
+git init
+
+ni:
+
+git remote add origin ...
+
+Ya está configurado.
+
+Trabajas normalmente durante un rato.
+
+Por ejemplo, mañana creamos:
+
+public/index.php
+public/.htaccess
+app/Core/Router.php
+routes/web.php
+
+Cuando llegues a un punto que quieras guardar en GitHub:
+
+Revisar cambios
+git status
+
+Git podría mostrar:
+
+modified:
+    .htaccess
+
+untracked:
+    public/index.php
+    app/Core/Router.php
+Prepararlos
+git add .
+Crear una versión
+git commit -m "Agregar sistema inicial de rutas"
+Subirla a GitHub
+git push
+
+Eso es todo.
+
+Tu rutina normal será:
+
+PROGRAMAR
+   ↓
+git status
+   ↓
+git add .
+   ↓
+git commit -m "Descripción"
+   ↓
+git push
+   ↓
+GITHUB
+
+Por ejemplo:
+
+git status
+git add .
+git commit -m "Crear dashboard principal"
+git push
+4. ¿Qué hace cada comando cotidiano?
+Comando	Función
+git status	Muestra qué cambió
+git add .	Prepara todos los cambios
+git commit -m "..."	Guarda una versión local
+git push	Sube los commits a GitHub
+git pull	Descarga e integra cambios de GitHub
+
+Una forma sencilla de recordarlo:
+
+status = ¿qué cambió?
+
+add = prepara
+
+commit = guarda versión
+
+push = sube
+
+pull = baja
+5. Mañana vuelves a trabajar en la misma PC
+
+Abres VS Code y tu proyecto.
+
+Como buena práctica, si GitHub podría contener cambios más recientes —especialmente si también trabajas desde otra computadora— comienza con:
+
+git status
+git pull
+
+Después programas normalmente.
+
+Al terminar una parte:
+
+git status
+git add .
+git commit -m "Agregar navegación del sidebar"
+git push
+
+Así:
+
+INICIO DEL DÍA
+
+git status
+git pull
+     ↓
+PROGRAMAR
+     ↓
+git status
+git add .
+git commit -m "..."
+git push
+
+Si sabes con certeza que nadie ni ningún otro equipo modificó el repositorio, el pull probablemente no traerá nada, pero sigue siendo una buena costumbre cuando trabajas en varios equipos.
+
+6. Trabajar desde otra computadora por primera vez
+
+Este escenario es diferente.
+
+Supongamos que tienes:
+
+PC 1
+   ↓
+GitHub
+   ↑
+PC 2
+
+Tu proyecto ya existe en GitHub. No vuelves a crear el repositorio ni utilizas git init.
+
+En la PC 2 instalas Git y clonas el proyecto:
+
+git clone URL_DEL_REPOSITORIO
+
+Por ejemplo:
+
+git clone https://github.com/Arthur-ASHCODE/app-herramientas.git
+
+Esto descarga:
+
+app-herramientas/
+├── .git/
+├── .gitignore
+├── .htaccess
+├── ...
+
+Además, clone ya configura automáticamente el origin.
+
+Por eso no necesitas:
+
+git init
+git remote add origin ...
+
+Puedes comprobar:
+
+git remote -v
+7. ¿Dónde clono el proyecto en la segunda PC?
+
+Como estamos utilizando XAMPP, podrías entrar primero:
+
+cd C:\xampp\htdocs\App
+
+y después:
+
+git clone https://github.com/Arthur-ASHCODE/app-herramientas.git
+
+Git crearía:
+
+C:\xampp\htdocs\App\app-herramientas
+
+Si quieres que localmente vuelva a llamarse app-base, puedes especificarlo:
+
+git clone https://github.com/Arthur-ASHCODE/app-herramientas.git app-base
+
+Entonces tendrías:
+
+C:\xampp\htdocs\App\app-base
+8. Trabajar normalmente desde dos computadoras
+
+Aquí git pull se vuelve especialmente importante.
+
+Imagina:
+
+PC TRABAJO
+     ↓
+   GitHub
+     ↑
+PC PERSONAL
+
+El lunes trabajas en PC 1:
+
+git add .
+git commit -m "Crear dashboard"
+git push
+
+GitHub ahora tiene la versión nueva.
+
+Llegas a PC 2.
+
+Antes de empezar a modificar código:
+
+git pull
+
+Ahora PC 2 recibe el dashboard que hiciste en PC 1.
+
+Trabajas en PC 2:
+
+git status
+git add .
+git commit -m "Agregar sidebar"
+git push
+
+Al regresar a PC 1:
+
+git pull
+
+y recibes el sidebar.
+
+La regla práctica es:
+
+CAMBIO DE COMPUTADORA
+
+        GitHub
+       ↑      ↓
+    push      pull
+     ↑          ↓
+   PC 1        PC 2
+
+Antes de empezar en otro equipo → git pull.
+
+Cuando terminas → git push.
+
+9. Flujo que te recomiendo adoptar
+Proyecto nuevo — una vez
+git init
+git status
+git add .
+git commit -m "Inicio del proyecto"
+git branch -M main
+git remote add origin URL
+git push -u origin main
+Trabajo diario
+
+Al comenzar:
+
+git status
+git pull
+
+Trabajas normalmente.
+
+Cuando termines una parte lógica:
+
+git status
+git add .
+git commit -m "Descripción clara del cambio"
+git push
+Nueva computadora — una vez
+git clone URL_DEL_REPOSITORIO
+
+Después esa computadora utiliza exactamente el mismo flujo diario:
+
+git pull
+
+# trabajar...
+
+git status
+git add .
+git commit -m "Descripción"
+git push
+10. Una recomendación importante
+
+No esperes necesariamente hasta el final del día para hacer un único commit gigantesco.
+
+Para nuestro proyecto podríamos hacer:
+
+Commit 1
+"Agregar configuración del router"
+
+Commit 2
+"Crear layout principal"
+
+Commit 3
+"Agregar sidebar responsive"
+
+Commit 4
+"Implementar navegación asíncrona"
+
+Commit 5
+"Crear formulario de login"
+
+Es mucho mejor que:
+
+"Muchos cambios"
+
+porque si posteriormente algo falla, el historial te permite identificar qué se modificó, cuándo y en qué etapa.
+
+Para app-herramientas, a partir de ahora nuestra rutina puede ser simplemente:
+
+git status
+git add .
+git commit -m "..."
+git push
+
+Y cuando cambies de computadora, primero git pull. Con eso ya tienes el flujo fundamental de Git/GitHub que necesitas para continuar desarrollando el proyecto.
