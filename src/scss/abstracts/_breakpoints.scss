@@ -1,0 +1,44 @@
+// ==========================================
+// BREAKPOINTS
+// ==========================================
+
+// Móvil
+$breakpoint-mobile: 767px;
+
+// Tablet
+$breakpoint-tablet: 1023px;
+
+// Laptop / escritorio pequeño
+$breakpoint-laptop: 1279px;
+
+// ==========================================
+// MIXINS RESPONSIVE
+// ==========================================
+
+// Móvil
+@mixin mobile {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+// Tablet
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+// Tablet + móvil
+@mixin tablet-down {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+// Desktop
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}

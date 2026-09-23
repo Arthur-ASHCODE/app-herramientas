@@ -1,0 +1,28 @@
+@use '../abstracts/breakpoints' as bp;
+
+.app {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    // ==============================
+    // CONTENEDOR DERECHO
+    // ==============================
+    &__body {
+        flex: 1;
+        min-width: 0;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    // ==============================
+    // TABLET Y MÓVIL
+    // ==============================
+    @include bp.tablet-down {
+        &__body {
+            width: 100%;
+        }
+    }
+}

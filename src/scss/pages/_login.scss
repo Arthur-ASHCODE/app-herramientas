@@ -1,0 +1,704 @@
+@use '../abstracts/variables' as v;
+
+// ==========================================
+// LOGIN
+// ==========================================
+
+.login {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    background: v.$color-background;
+
+    // ======================================
+    // PANEL IZQUIERDO
+    // ======================================
+
+    &__brand {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        min-height: 100vh;
+        padding: 3rem 4rem 2rem;
+
+        color: v.$color-white;
+        background: v.$color-primary;
+    }
+
+    &__brand-content {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // ======================================
+    // LOGO
+    // ======================================
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-bottom: 3rem;
+
+        img {
+            width: 10rem;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        span {
+            margin-top: 0.75rem;
+
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            color: v.$color-white;
+        }
+    }
+
+    // ======================================
+    // BIENVENIDA
+    // ======================================
+
+    &__welcome {
+        width: 100%;
+        max-width: 30rem;
+
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+
+        text-align: center;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+        h1 {
+            margin: 0 0 0.75rem;
+
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+
+            font-size: 1rem;
+            line-height: 1.7;
+
+            color: rgba(255, 255, 255, 0.85);
+        }
+    }
+
+    // ======================================
+    // CARACTERÍSTICAS
+    // ======================================
+
+    &__features {
+        width: 100%;
+        max-width: 32rem;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 1rem;
+    }
+
+    &__feature {
+        text-align: center;
+
+        h3 {
+            margin: 0.75rem 0 0.35rem;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+
+            font-size: 0.75rem;
+            line-height: 1.5;
+
+            color: rgba(255, 255, 255, 0.75);
+        }
+    }
+
+    &__feature-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.4rem;
+
+        color: v.$color-secondary;
+
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 0.75rem;
+    }
+
+    // ======================================
+    // COPYRIGHT
+    // ======================================
+
+    &__copyright {
+        font-size: 0.75rem;
+
+        color: rgba(255, 255, 255, 0.65);
+
+        p {
+            margin: 0;
+        }
+    }
+
+    // ======================================
+    // PANEL DERECHO
+    // ======================================
+
+    &__content {
+        position: relative;
+
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 3rem;
+
+        overflow: hidden;
+    }
+
+    // ======================================
+    // BACKGROUND
+    // ======================================
+
+    &__background {
+        position: absolute;
+        inset: 0;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        // Cuando tengas tu imagen:
+        // background-image:
+        //     linear-gradient(
+        //         rgba(255, 255, 255, 0.15),
+        //         rgba(255, 255, 255, 0.15)
+        //     ),
+        //     url('/App/app-base/assets/img/backgrounds/login-background.jpg');
+
+        background-color: #e8edf4;
+    }
+
+    // ======================================
+    // CARD
+    // ======================================
+
+    &__card {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        max-width: 28rem;
+
+        padding: 3rem 2.5rem;
+
+        background: v.$color-white;
+
+        border-radius: 1rem;
+
+        box-shadow:
+            0 1.5rem 3rem rgba(23, 59, 108, 0.12),
+            0 0.5rem 1rem rgba(0, 0, 0, 0.06);
+    }
+
+    // ======================================
+    // HEADER
+    // ======================================
+
+    &__header {
+        margin-bottom: 2.5rem;
+
+        text-align: center;
+
+        h2 {
+            margin: 0;
+
+            font-size: 1.4rem;
+            font-weight: 600;
+
+            color: v.$color-primary;
+        }
+    }
+
+    &__header-line {
+        display: block;
+
+        width: 2.5rem;
+        height: 0.15rem;
+
+        margin: 1rem auto 0;
+
+        background: v.$color-secondary;
+
+        border-radius: 1rem;
+    }
+
+    // ======================================
+    // FORMULARIO
+    // ======================================
+
+    &__form {
+        width: 100%;
+    }
+
+    &__field {
+        margin-bottom: 1.25rem;
+
+        label {
+            display: block;
+
+            margin-bottom: 0.5rem;
+
+            font-size: 0.8rem;
+            font-weight: 500;
+
+            color: v.$color-text;
+        }
+    }
+
+    // ======================================
+    // INPUT
+    // ======================================
+
+    &__input {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 3.25rem;
+
+        border: 1px solid #dce2ea;
+        border-radius: 0.5rem;
+
+        background: v.$color-white;
+
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+
+        &:focus-within {
+            border-color: v.$color-primary;
+
+            box-shadow: 0 0 0 3px rgba(23, 59, 108, 0.08);
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+
+            padding: 0 3rem;
+
+            border: 0;
+            outline: 0;
+
+            font: inherit;
+            font-size: 0.85rem;
+
+            color: v.$color-text;
+
+            background: transparent;
+
+            &::placeholder {
+                color: #a4adba;
+            }
+        }
+    }
+
+    &__input-icon {
+        position: absolute;
+        left: 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: v.$color-text-muted;
+    }
+
+    &__password-toggle {
+        position: absolute;
+        right: 0.75rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0.5rem;
+
+        border: 0;
+
+        color: v.$color-text-muted;
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    // ======================================
+    // OPCIONES
+    // ======================================
+
+    &__options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 1rem;
+
+        margin: 0.25rem 0 1.5rem;
+    }
+
+    &__remember {
+        display: flex;
+        align-items: center;
+
+        gap: 0.5rem;
+
+        font-size: 0.8rem;
+
+        color: v.$color-text;
+
+        cursor: pointer;
+
+        input {
+            width: 1rem;
+            height: 1rem;
+
+            accent-color: v.$color-primary;
+        }
+    }
+
+    &__forgot {
+        font-size: 0.8rem;
+        font-weight: 500;
+
+        color: v.$color-primary;
+
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    // ======================================
+    // BOTÓN LOGIN
+    // ======================================
+
+    &__submit {
+        width: 100%;
+        min-height: 3.25rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 0.6rem;
+
+        border: 0;
+        border-radius: 0.5rem;
+
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 500;
+
+        color: v.$color-white;
+        background: v.$color-primary;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+
+            box-shadow: 0 0.5rem 1rem rgba(23, 59, 108, 0.2);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    // ======================================
+    // SEPARADOR
+    // ======================================
+
+    &__separator {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+
+        gap: 1rem;
+
+        margin: 1.75rem 0;
+
+        span {
+            height: 1px;
+
+            background: #e5e9ef;
+        }
+
+        p {
+            margin: 0;
+
+            font-size: 0.75rem;
+
+            color: v.$color-text-muted;
+        }
+    }
+
+    // ======================================
+    // REDES SOCIALES
+    // ======================================
+
+    &__social {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 1rem;
+    }
+
+    &__social-button {
+        min-height: 3rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #e1e6ed;
+        border-radius: 0.5rem;
+
+        font: inherit;
+        font-weight: 600;
+
+        background: v.$color-white;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+
+            box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+        }
+    }
+}
+
+
+// ==========================================
+// TABLET
+// ==========================================
+
+@media (max-width: 1023px) {
+
+    .login {
+        grid-template-columns: 38% 62%;
+
+        &__brand {
+            padding: 2rem 1.5rem;
+        }
+
+        &__logo {
+
+            img {
+                width: 7rem;
+            }
+        }
+
+        &__welcome {
+            display: none;
+        }
+
+        &__features {
+            display: none;
+        }
+
+        &__copyright {
+            text-align: center;
+        }
+
+        &__content {
+            padding: 2rem;
+        }
+
+        &__card {
+            max-width: 26rem;
+
+            padding: 2.5rem 2rem;
+        }
+    }
+}
+
+
+// ==========================================
+// MÓVIL
+// ==========================================
+
+@media (max-width: 767px) {
+
+    .login {
+        display: flex;
+        flex-direction: column;
+
+        min-height: 100vh;
+
+        background: v.$color-primary;
+
+        &__brand {
+            display: contents;
+        }
+
+        &__brand-content {
+            display: contents;
+        }
+
+        &__logo {
+            order: 1;
+
+            min-height: 12rem;
+
+            display: flex;
+            justify-content: center;
+
+            margin: 0;
+            padding: 2rem 1rem 1.5rem;
+
+            img {
+                width: 6rem;
+            }
+
+            span {
+                font-size: 0.7rem;
+            }
+        }
+
+        &__welcome {
+            display: none;
+        }
+
+        &__content {
+            order: 2;
+
+            min-height: auto;
+
+            display: block;
+
+            padding: 0 1rem;
+
+            overflow: visible;
+        }
+
+        &__background {
+            display: none;
+        }
+
+        &__card {
+            max-width: 100%;
+
+            padding: 2rem 1.25rem;
+
+            border-radius: 1.25rem;
+        }
+
+        &__header {
+            margin-bottom: 2rem;
+
+            h2 {
+                max-width: 13rem;
+
+                margin: 0 auto;
+
+                font-size: 1.25rem;
+                line-height: 1.4;
+            }
+        }
+
+        &__options {
+            align-items: flex-start;
+
+            gap: 0.75rem;
+        }
+
+        &__remember,
+        &__forgot {
+            font-size: 0.7rem;
+        }
+
+        &__features {
+            order: 3;
+
+            width: 100%;
+            max-width: none;
+
+            display: grid;
+
+            padding: 1.75rem 1rem 1rem;
+        }
+
+        &__feature {
+
+            p {
+                display: none;
+            }
+
+            h3 {
+                font-size: 0.75rem;
+            }
+        }
+
+        &__feature-icon {
+            width: auto;
+            height: auto;
+
+            border: 0;
+
+            font-size: 1.1rem;
+        }
+
+        &__copyright {
+            order: 4;
+
+            padding: 1rem 1rem 1.5rem;
+
+            text-align: center;
+
+            font-size: 0.65rem;
+        }
+    }
+}
