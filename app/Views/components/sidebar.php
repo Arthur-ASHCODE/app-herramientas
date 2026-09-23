@@ -4,7 +4,7 @@
 
         <img
             class="sidebar__logo"
-            src="/App/app-base/assets/img/logo/logo.png"
+            src="/App/app-base/assets/img/logo/SSYPAZ.png"
             alt="ASHCODE"
         >
 

@@ -10,7 +10,7 @@
             <!-- Logo -->
             <div class="login__logo">
                 <img
-                    src="/App/app-base/assets/img/logo/logo.png"
+                    src="/App/app-base/assets/img/logo/SSYPAZ.png"
                     alt="ASHCODE"
                 >
 

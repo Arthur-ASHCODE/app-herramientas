@@ -6,15 +6,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 2rem;
-
     padding: 0 2rem;
-
     background: v.$color-white;
-
     border-bottom: 1px solid #e9edf3;
-
     box-shadow: 0 0.15rem 0.8rem rgba(0, 0, 0, 0.04);
 
     &__left,
@@ -34,24 +29,20 @@
     &__menu {
         width: 2.5rem;
         height: 2.5rem;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
         border: 1px solid #e2e7ee;
         border-radius: 0.5rem;
-
         color: v.$color-primary;
         background: v.$color-white;
-
         cursor: pointer;
+        
     }
 
     &__title {
         font-size: 1.1rem;
         font-weight: 600;
-
         color: v.$color-primary;
     }
 
@@ -60,14 +51,10 @@
         input {
             width: 16rem;
             height: 2.6rem;
-
             padding: 0 1rem;
-
             border: 1px solid #e2e7ee;
             border-radius: 0.75rem;
-
             outline: none;
-
             background: #f7f9fc;
 
             &:focus {
@@ -79,13 +66,10 @@
     &__button {
         width: 2.5rem;
         height: 2.5rem;
-
         border: 0;
         border-radius: 50%;
-
         color: v.$color-primary;
         background: #f7f9fc;
-
         cursor: pointer;
     }
 
@@ -103,12 +87,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
         font-size: 0.75rem;
         font-weight: 600;
-
         color: v.$color-primary;
         background: v.$color-secondary;
     }
@@ -119,13 +100,11 @@
 
         strong {
             font-size: 0.8rem;
-
             color: v.$color-text;
         }
 
         span {
             font-size: 0.7rem;
-
             color: v.$color-text-muted;
         }
     }

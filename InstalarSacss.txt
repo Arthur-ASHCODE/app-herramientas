@@ -1,0 +1,77 @@
+🟢 Opción 1: Usar Node.js + npm
+🔹 1️⃣ Instalar Node.js
+
+Descárgalo desde:
+👉 https://nodejs.org
+Instálalo (trae npm incluido).
+
+🔹 
+🟠 Opción 2: Instalar Sass globalmente
+Si quieres usar Sass en cualquier proyecto sin usar npm local, puedes instalarlo globalmente:
+
+
+npm install -g sass
+Y después:
+
+
+sass --watch scss/style.scss css/style.css
+
+comprobar en la termina 
+sass --version
+
+2️⃣ Hacer una prueba de compilación
+Si quieres asegurarte 100 % que Sass compila bien, haz una mini prueba.
+
+🟢 Crear carpetas y archivos
+1️⃣ Crea carpeta scss
+2️⃣ Dentro, crea archivo style.scss y escribe, por ejemplo:
+
+$color-primario: #3498db;
+
+body {
+  background-color: $color-primario;
+}
+
+3️⃣ Crea carpeta css, que es donde saldrá el CSS compilado.
+
+🟢 Ejecuta
+sass --watch scss/style.scss:css/style.css
+
+
+Error de Politica
+
+Paso 1: Abrir PowerShell como administrador
+1️⃣ Busca "PowerShell" en el menú de inicio.
+2️⃣ Clic derecho → Ejecutar como administrador.
+
+🔹 Paso 2: Cambiar la política de ejecución
+En la consola, escribe:
+
+powershell
+
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+💬 ¿Qué significa esto?
+✔️ CurrentUser: solo para tu usuario actual.
+✔️ RemoteSigned: permite scripts locales sin firmar, y scripts descargados que estén firmados.
+
+🔹 Paso 3: Aceptar
+Te preguntará:
+
+¿Está seguro de que desea cambiar la directiva de ejecución?
+[S] Sí  [A] Sí a todo  [N] No  [U] Suspender  [?] Ayuda (el valor predeterminado es "N"):
+Escribe:
+
+S
+y presiona Enter.
+
+🔹 Paso 4: Cerrar y volver a abrir tu VS Code o tu PowerShell
+Así se actualiza la política.
+
+🔹 Paso 5: Volver a ejecutar Sass
+
+sass --watch scss/style.scss:css/style.css
+
+
+cd "C:\Program Files\GLPI-Agent"
+glpi-agent.exe --debug --debug
