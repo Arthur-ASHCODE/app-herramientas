@@ -7,15 +7,13 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+        content="width=device-width, initial-scale=1.0">
 
     <title>Control de Herramientas</title>
 
     <link
         rel="stylesheet"
-        href="/App/app-base/assets/css/app.css"
-    >
+        href="/App/app-base/assets/css/app.css">
 
 </head>
 
@@ -27,6 +25,10 @@
         require __DIR__ . '/../components/sidebar.php';
         ?>
 
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"></div>
+
 
         <div class="app__main">
 
@@ -37,8 +39,7 @@
 
             <main
                 class="workspace"
-                id="workspace"
-            >
+                id="workspace">
 
                 <?= $content ?>
 
@@ -47,6 +48,8 @@
         </div>
 
     </div>
+
+    <script type="module" src="/App/app-base/assets/js/app.js"></script>
 
 </body>
 

@@ -1,196 +1,244 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/breakpoints' as bp;
+@use "../abstracts/variables" as v;
+@use "../abstracts/breakpoints" as bp;
 
 .sidebar {
-    width: 16rem;
-    min-height: 100vh;
+  width: 16rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 1.5rem 1rem;
+  color: v.$color-white;
+  background: v.$color-primary;
+
+  // =========================
+  // LOGO
+  // =========================
+
+  &__brand {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
-    padding: 1.5rem 1rem;
-    color: v.$color-white;
-    background: v.$color-primary;
+    align-items: center;
+    padding: 1rem 0 2.5rem;
+  }
 
-    // =========================
-    // LOGO
-    // =========================
+  &__logo {
+    width: 7rem;
+    height: auto;
+    object-fit: contain;
+  }
 
-    &__brand {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0 2.5rem;
+  &__website {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  // =========================
+  // NAVEGACIÓN
+  // =========================
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 3rem;
+    padding: 0 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      color: v.$color-white;
+      background: rgba(255, 255, 255, 0.08);
     }
 
-    &__logo {
-        width: 7rem;
-        height: auto;
-        object-fit: contain;
-    }
+    &--active {
+      color: v.$color-white;
+      background: rgba(255, 255, 255, 0.1);
 
-    &__website {
-        margin-top: 0.5rem;
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
+      &::before {
+        content: "";
 
-    // =========================
-    // NAVEGACIÓN
-    // =========================
-
-    &__nav {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    &__link {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        min-height: 3rem;
-        padding: 0 1rem;
-        color: rgba(255, 255, 255, 0.85);
-        text-decoration: none;
-        border-radius: 0.5rem;
-        transition:
-            background 0.2s ease,
-            color 0.2s ease;
-
-        &:hover {
-            color: v.$color-white;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        &--active {
-            color: v.$color-white;
-            background: rgba(255, 255, 255, 0.1);
-
-            &::before {
-                content: '';
-
-                position: absolute;
-                top: 0.5rem;
-                bottom: 0.5rem;
-                left: 0;
-                width: 0.2rem;
-                background: v.$color-secondary;
-                border-radius: 1rem;
-            }
-        }
-    }
-
-    &__icon {
-        width: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: v.$color-secondary;
-    }
-
-    // =========================
-    // USUARIO
-    // =========================
-
-    &__footer {
-        margin-top: auto;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    &__user {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-
-    &__avatar {
-        width: 2.75rem;
-        height: 2.75rem;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: v.$color-primary;
+        position: absolute;
+        top: 0.5rem;
+        bottom: 0.5rem;
+        left: 0;
+        width: 0.2rem;
         background: v.$color-secondary;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  &__icon {
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$color-secondary;
+  }
+
+  // =========================
+  // USUARIO
+  // =========================
+
+  &__footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__avatar {
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: v.$color-primary;
+    background: v.$color-secondary;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+
+    strong {
+      font-size: 0.85rem;
     }
 
-    &__user-info {
-        display: flex;
-        flex-direction: column;
-
-        strong {
-            font-size: 0.85rem;
-        }
-
-        span {
-            margin-top: 0.15rem;
-            font-size: 0.7rem;
-            color: v.$color-secondary;
-        }
+    span {
+      margin-top: 0.15rem;
+      font-size: 0.7rem;
+      color: v.$color-secondary;
     }
+  }
 }
 
 // ==========================================
 // RESPONSIVE - TABLET
 // ==========================================
 @include bp.tablet {
+  .sidebar {
+    width: 5rem;
 
-    .sidebar {
-        width: 5rem;
-
-        &__brand {
-            padding-left: 0.625rem;
-            padding-right: 0.625rem;
-        }
-
-        &__logo {
-            width: 3.125rem;
-            max-width: 3.125rem;
-        }
-
-        &__website {
-            display: none;
-        }
-
-        &__nav {
-            padding-left: 0.625rem;
-            padding-right: 0.625rem;
-        }
-
-        &__link {
-            justify-content: center;
-            padding-left: 0;
-            padding-right: 0;
-
-            > span:not(.sidebar__icon) {
-                display: none;
-            }
-        }
-
-        &__icon {
-            margin: 0;
-        }
-
-        &__footer {
-            padding-left: 0.625rem;
-            padding-right: 0.625rem;
-        }
-
-        &__user {
-            justify-content: center;
-        }
-
-        &__user-info {
-            display: none;
-        }
-
-        &__avatar {
-            flex-shrink: 0;
-        }
+    &__brand {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
     }
+
+    &__logo {
+      width: 3.125rem;
+      max-width: 3.125rem;
+    }
+
+    &__website {
+      display: none;
+    }
+
+    &__nav {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+    }
+
+    &__link {
+      justify-content: center;
+      padding-left: 0;
+      padding-right: 0;
+
+      > span:not(.sidebar__icon) {
+        display: none;
+      }
+    }
+
+    &__icon {
+      margin: 0;
+    }
+
+    &__footer {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+    }
+
+    &__user {
+      justify-content: center;
+    }
+
+    &__user-info {
+      display: none;
+    }
+
+    &__avatar {
+      flex-shrink: 0;
+    }
+  }
+}
+
+// ==========================================
+// RESPONSIVE - MÓVIL
+// ==========================================
+
+@include bp.mobile {
+  .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 16rem;
+    height: 100%;
+
+    z-index: 1000;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease;
+
+    // Cuando JavaScript agregue esta clase
+    &--open {
+      transform: translateX(0);
+    }
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
 }

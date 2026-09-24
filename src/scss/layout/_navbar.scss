@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/breakpoints' as bp;
 
 .navbar {
     min-height: 4.5rem;
@@ -106,6 +107,72 @@
         span {
             font-size: 0.7rem;
             color: v.$color-text-muted;
+        }
+    }
+}
+
+// ==========================================
+// RESPONSIVE - MÓVIL
+// ==========================================
+
+@include bp.mobile {
+
+    .navbar {
+        min-height: 4rem;
+
+        gap: 0.75rem;
+
+        padding: 0 1rem;
+
+        &__left {
+            gap: 0.75rem;
+
+            min-width: 0;
+        }
+
+        &__right {
+            gap: 0.5rem;
+
+            margin-left: auto;
+        }
+
+        &__menu {
+            width: 2.5rem;
+            height: 2.5rem;
+
+            flex-shrink: 0;
+        }
+
+        &__title {
+            font-size: 0.95rem;
+            line-height: 1.2;
+        }
+
+        // Ocultamos buscador
+        &__search {
+            display: none;
+        }
+
+        // Botón derecho
+        &__button {
+            flex-shrink: 0;
+        }
+
+        // Perfil
+        &__profile {
+            gap: 0;
+        }
+
+        &__avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+
+            flex-shrink: 0;
+        }
+
+        // Ocultamos nombre y rol
+        &__user {
+            display: none;
         }
     }
 }

@@ -7,7 +7,7 @@
             id="sidebarToggle"
             type="button"
             aria-label="Abrir menú"
-        >
+            aria-expanded="false">
             ☰
         </button>
 
@@ -25,8 +25,7 @@
             <input
                 type="search"
                 placeholder="Buscar..."
-                aria-label="Buscar"
-            >
+                aria-label="Buscar">
 
         </div>
 
@@ -34,8 +33,7 @@
         <button
             class="navbar__button"
             type="button"
-            aria-label="Notificaciones"
-        >
+            aria-label="Notificaciones">
             ♢
         </button>
 
