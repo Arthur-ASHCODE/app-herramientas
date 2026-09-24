@@ -28,9 +28,9 @@
     }
 
     &__menu {
+        display: none;
         width: 2.5rem;
         height: 2.5rem;
-        display: flex;
         align-items: center;
         justify-content: center;
         border: 1px solid #e2e7ee;
@@ -38,7 +38,6 @@
         color: v.$color-primary;
         background: v.$color-white;
         cursor: pointer;
-        
     }
 
     &__title {
@@ -137,6 +136,8 @@
         }
 
         &__menu {
+            display: flex;
+
             width: 2.5rem;
             height: 2.5rem;
 

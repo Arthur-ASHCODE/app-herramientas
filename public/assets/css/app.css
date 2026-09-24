@@ -251,9 +251,9 @@ textarea {
   gap: 1rem;
 }
 .navbar__menu {
+  display: none;
   width: 2.5rem;
   height: 2.5rem;
-  display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #e2e7ee;
@@ -333,6 +333,7 @@ textarea {
     margin-left: auto;
   }
   .navbar__menu {
+    display: flex;
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
