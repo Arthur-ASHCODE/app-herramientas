@@ -22,18 +22,32 @@ $router->get('/dashboard', function () {
 
 });
 
-$router->get('/section-1', function () {
-    echo 'Sección 1';
+$router->get('/modulo01', function () {
+
+    require_once __DIR__ . '/../app/Controllers/ModuloController.php';
+
+    $controller = new ModuloController();
+
+    $controller->modulo01();
+
 });
 
-$router->get('/section-2', function () {
-    echo 'Sección 2';
+
+$router->get('/modulo02', function () {
+
+    require_once __DIR__ . '/../app/Controllers/ModuloController.php';
+
+    $controller = new ModuloController();
+    $controller->modulo02();
+
 });
 
-$router->get('/section-3', function () {
-    echo 'Sección 3';
-});
 
-$router->get('/section-3', function () {
-    echo 'Sección 3';
+$router->get('/modulo03', function () {
+
+    require_once __DIR__ . '/../app/Controllers/ModuloController.php';
+
+    $controller = new ModuloController();
+    $controller->modulo03();
+
 });

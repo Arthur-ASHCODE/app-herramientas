@@ -5,8 +5,7 @@
         <img
             class="sidebar__logo"
             src="/App/app-base/assets/img/logo/SSYPAZ.png"
-            alt="ASHCODE"
-        >
+            alt="ASHCODE">
 
         <span class="sidebar__website">
             www.ashcode.com.mx
@@ -19,41 +18,37 @@
 
         <a
             href="/App/app-base/dashboard"
-            class="sidebar__link sidebar__link--active"
-            data-route="/dashboard"
-        >
+            class="sidebar__link"
+            data-route="/dashboard">
             <span class="sidebar__icon">⌂</span>
             <span>Dashboard</span>
         </a>
 
 
         <a
-            href="/App/app-base/section-1"
+            href="/App/app-base/modulo01"
             class="sidebar__link"
-            data-route="/section-1"
-        >
+            data-route="/modulo01">
             <span class="sidebar__icon">□</span>
-            <span>Sección 1</span>
+            <span>Módulo 01</span>
         </a>
 
 
         <a
-            href="/App/app-base/section-2"
+            href="/App/app-base/modulo02"
             class="sidebar__link"
-            data-route="/section-2"
-        >
+            data-route="/modulo02">
             <span class="sidebar__icon">□</span>
-            <span>Sección 2</span>
+            <span>Módulo 02</span>
         </a>
 
 
         <a
-            href="/App/app-base/section-3"
+            href="/App/app-base/modulo03"
             class="sidebar__link"
-            data-route="/section-3"
-        >
+            data-route="/modulo03">
             <span class="sidebar__icon">□</span>
-            <span>Sección 3</span>
+            <span>Módulo 03</span>
         </a>
 
     </nav>

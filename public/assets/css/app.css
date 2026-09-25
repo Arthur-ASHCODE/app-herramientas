@@ -397,7 +397,7 @@ textarea {
   margin-bottom: 3rem;
 }
 .login__logo img {
-  width: 10rem;
+  width: 28rem;
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -708,14 +708,14 @@ textarea {
   }
   .login__logo {
     order: 1;
-    min-height: 12rem;
+    min-height: 13rem;
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 2rem 1rem 1.5rem;
   }
   .login__logo img {
-    width: 6rem;
+    width: 15rem;
   }
   .login__logo span {
     font-size: 0.7rem;
