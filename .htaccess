@@ -1,7 +1,25 @@
+
+# ======================================================
+# .HTACCESS PRINCIPAL - APP-BASE
+# ======================================================
+
 RewriteEngine On
 
-# Evita volver a redirigir solicitudes que ya están dentro de /public
-RewriteCond %{REQUEST_URI} !/public/
+# ------------------------------------------------------
+# 1. EVITAR REESCRITURAS REPETIDAS
+# ------------------------------------------------------
 
-# Envía todas las solicitudes hacia /public
+# Si la solicitud ya corresponde al directorio public,
+# no volver a agregar public/ al inicio.
+
+RewriteRule ^public(?:/|$) - [L]
+
+
+# ------------------------------------------------------
+# 2. DIRIGIR LAS SOLICITUDES AL DIRECTORIO PUBLIC
+# ------------------------------------------------------
+
+# Todas las demás solicitudes se reescriben
+# internamente hacia la carpeta public.
+
 RewriteRule ^(.*)$ public/$1 [L]

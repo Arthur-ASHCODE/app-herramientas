@@ -1,3 +1,4 @@
+
 <main class="login">
 
     <!-- ========================================
@@ -9,23 +10,29 @@
 
             <!-- Logo -->
             <div class="login__logo">
+
                 <img
-                    src="/App/app-base/assets/img/logo/SSYPAZ02.png"
+                    src="<?= htmlspecialchars(asset('img/logo/SSYPAZ02.png'), ENT_QUOTES, 'UTF-8') ?>"
                     alt="ASHCODE"
                 >
 
                 <span>www.ashcode.com.mx</span>
+
             </div>
+
 
             <!-- Bienvenida -->
             <div class="login__welcome">
+
                 <h1>Bienvenido</h1>
 
                 <p>
                     Inicia sesión para continuar<br>
                     en el Sistema de Documentación
                 </p>
+
             </div>
+
 
             <!-- Características -->
             <div class="login__features">
@@ -33,7 +40,6 @@
                 <article class="login__feature">
 
                     <div class="login__feature-icon">
-                        <!-- Icono -->
                         🛡
                     </div>
 
@@ -50,7 +56,6 @@
                 <article class="login__feature">
 
                     <div class="login__feature-icon">
-                        <!-- Icono -->
                         ⚡
                     </div>
 
@@ -67,7 +72,6 @@
                 <article class="login__feature">
 
                     <div class="login__feature-icon">
-                        <!-- Icono -->
                         ☁
                     </div>
 
@@ -122,24 +126,71 @@
             </header>
 
 
-            <!-- Formulario -->
+            <!-- ====================================
+                 MENSAJES DE ERROR
+            ===================================== -->
+
+            <?php if (!empty($_SESSION['login_error'])): ?>
+
+                <div
+                    class="login__error"
+                    role="alert"
+                >
+
+                    <?= htmlspecialchars(
+                        (string) $_SESSION['login_error'],
+                        ENT_QUOTES,
+                        'UTF-8'
+                    ) ?>
+
+                </div>
+
+                <?php
+                    // Mostrar el mensaje una sola vez.
+                    unset($_SESSION['login_error']);
+                ?>
+
+            <?php endif; ?>
+
+
+            <!-- ====================================
+                 FORMULARIO LOGIN
+            ===================================== -->
+
             <form
                 class="login__form"
-                action=""
+                action="<?= htmlspecialchars(url('login'), ENT_QUOTES, 'UTF-8') ?>"
                 method="POST"
             >
 
-                <!-- Usuario -->
+                <!-- ====================================
+                     TOKEN DE SEGURIDAD CSRF
+                ===================================== -->
+
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="<?= htmlspecialchars(
+                        $_SESSION['csrf_token'] ?? '',
+                        ENT_QUOTES,
+                        'UTF-8'
+                    ) ?>"
+                >
+
+
+                <!-- ====================================
+                     USUARIO
+                ===================================== -->
+
                 <div class="login__field">
 
                     <label for="user">
-                        Usuario o correo
+                        Usuario
                     </label>
 
                     <div class="login__input">
 
                         <span class="login__input-icon">
-                            <!-- Icono usuario -->
                             ♙
                         </span>
 
@@ -147,8 +198,9 @@
                             type="text"
                             id="user"
                             name="user"
-                            placeholder="Ingresa tu usuario o correo"
+                            placeholder="Ingresa tu usuario"
                             autocomplete="username"
+                            maxlength="100"
                             required
                         >
 
@@ -157,7 +209,10 @@
                 </div>
 
 
-                <!-- Contraseña -->
+                <!-- ====================================
+                     CONTRASEÑA
+                ===================================== -->
+
                 <div class="login__field">
 
                     <label for="password">
@@ -167,7 +222,6 @@
                     <div class="login__input">
 
                         <span class="login__input-icon">
-                            <!-- Icono candado -->
                             🔒
                         </span>
 
@@ -185,7 +239,6 @@
                             type="button"
                             aria-label="Mostrar contraseña"
                         >
-                            <!-- Icono ojo -->
                             ◉
                         </button>
 
@@ -194,7 +247,10 @@
                 </div>
 
 
-                <!-- Opciones -->
+                <!-- ====================================
+                     OPCIONES
+                ===================================== -->
+
                 <div class="login__options">
 
                     <label class="login__remember">
@@ -219,16 +275,16 @@
                 </div>
 
 
-                <!-- Botón iniciar sesión -->
+                <!-- ====================================
+                     BOTÓN INICIAR SESIÓN
+                ===================================== -->
+
                 <button
                     class="login__submit"
                     type="submit"
                 >
 
-                    <span>
-                        <!-- Icono -->
-                        →
-                    </span>
+                    <span>→</span>
 
                     Iniciar sesión
 
@@ -237,7 +293,10 @@
             </form>
 
 
-            <!-- Separador -->
+            <!-- ====================================
+                 SEPARADOR
+            ===================================== -->
+
             <div class="login__separator">
 
                 <span></span>
@@ -249,7 +308,10 @@
             </div>
 
 
-            <!-- Login social -->
+            <!-- ====================================
+                 LOGIN SOCIAL
+            ===================================== -->
+
             <div class="login__social">
 
                 <button
@@ -257,7 +319,6 @@
                     type="button"
                     aria-label="Continuar con Facebook"
                 >
-                    <!-- Facebook -->
                     F
                 </button>
 
@@ -267,7 +328,6 @@
                     type="button"
                     aria-label="Continuar con Google"
                 >
-                    <!-- Google -->
                     G
                 </button>
 
@@ -277,7 +337,6 @@
                     type="button"
                     aria-label="Continuar con Microsoft"
                 >
-                    <!-- Microsoft -->
                     M
                 </button>
 

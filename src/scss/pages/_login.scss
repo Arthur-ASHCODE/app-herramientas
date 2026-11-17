@@ -699,3 +699,19 @@
         }
     }
 }
+
+
+
+.login__error {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    border-radius: 8px;
+
+    color: #be123c;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}

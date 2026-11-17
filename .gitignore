@@ -1,5 +1,18 @@
+
+# ==========================================
+# APP-BASE - Archivos excluidos de Git
+# ==========================================
+
 # Variables de entorno y credenciales
 .env
+.env.*
+!.env.example
+/config/database.php
+
+# Respaldos de bases de datos
+/BD/
+*.sql
+*.sql.gz
 
 # Logs
 storage/logs/*
@@ -21,6 +34,11 @@ uploads/*
 
 # Configuración de VS Code
 .vscode/
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
 
 # Archivos del sistema
 .DS_Store

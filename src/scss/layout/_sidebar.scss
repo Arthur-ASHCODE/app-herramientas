@@ -1,24 +1,35 @@
+
 @use "../abstracts/variables" as v;
 @use "../abstracts/breakpoints" as bp;
+
+
+// ======================================================
+// SIDEBAR - ESTRUCTURA PRINCIPAL
+// ======================================================
 
 .sidebar {
   width: 16rem;
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+
   padding: 1.5rem 1rem;
+
   color: v.$color-white;
   background: v.$color-primary;
 
-  // =========================
-  // LOGO
-  // =========================
+
+  // ====================================================
+  // LOGO / IDENTIDAD
+  // ====================================================
 
   &__brand {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     padding: 1rem 0 2.5rem;
   }
 
@@ -30,13 +41,15 @@
 
   &__website {
     margin-top: 0.5rem;
+
     font-size: 0.75rem;
     font-weight: 500;
   }
 
-  // =========================
+
+  // ====================================================
   // NAVEGACIÓN
-  // =========================
+  // ====================================================
 
   &__nav {
     display: flex;
@@ -46,14 +59,19 @@
 
   &__link {
     position: relative;
+
     display: flex;
     align-items: center;
     gap: 0.8rem;
+
     min-height: 3rem;
     padding: 0 1rem;
+
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
+
     border-radius: 0.5rem;
+
     transition:
       background 0.2s ease,
       color 0.2s ease;
@@ -74,7 +92,9 @@
         top: 0.5rem;
         bottom: 0.5rem;
         left: 0;
+
         width: 0.2rem;
+
         background: v.$color-secondary;
         border-radius: 1rem;
       }
@@ -82,20 +102,19 @@
   }
 
   &__icon {
-    width: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: v.$color-secondary;
+    color: #ffffff;
+    font-size: 1rem;
   }
 
-  // =========================
-  // USUARIO
-  // =========================
+
+  // ====================================================
+  // FOOTER / INFORMACIÓN DEL USUARIO
+  // ====================================================
 
   &__footer {
     margin-top: auto;
     padding-top: 1.5rem;
+
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
@@ -108,13 +127,18 @@
   &__avatar {
     width: 2.75rem;
     height: 2.75rem;
+
     flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
+
     font-size: 0.8rem;
     font-weight: 600;
+
     color: v.$color-primary;
     background: v.$color-secondary;
   }
@@ -123,22 +147,117 @@
     display: flex;
     flex-direction: column;
 
+    min-width: 0;
+
     strong {
       font-size: 0.85rem;
+      overflow-wrap: anywhere;
     }
 
     span {
       margin-top: 0.15rem;
+
       font-size: 0.7rem;
       color: v.$color-secondary;
     }
   }
+
+
+  // ====================================================
+  // FORMULARIO CERRAR SESIÓN
+  // ====================================================
+
+  &__logout-form {
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+
+
+  // ====================================================
+  // BOTÓN CERRAR SESIÓN
+  // ====================================================
+
+  &__logout {
+    width: 100%;
+    min-height: 2.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+
+    padding: 0.65rem 1rem;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    color: v.$color-white;
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      color: v.$color-white;
+
+      background: rgba(255, 255, 255, 0.14);
+      border-color: v.$color-secondary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid v.$color-secondary;
+      outline-offset: 3px;
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+
+  // ====================================================
+  // ICONO CERRAR SESIÓN
+  // ====================================================
+
+  &__logout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 1.25rem;
+    line-height: 1;
+
+    color: v.$color-secondary;
+  }
+
+
+  // ====================================================
+  // TEXTO CERRAR SESIÓN
+  // ====================================================
+
+  &__logout-text {
+    white-space: nowrap;
+  }
+
 }
 
-// ==========================================
+
+// ======================================================
 // RESPONSIVE - TABLET
-// ==========================================
+// ======================================================
+
 @include bp.tablet {
+
   .sidebar {
     width: 5rem;
 
@@ -163,6 +282,7 @@
 
     &__link {
       justify-content: center;
+
       padding-left: 0;
       padding-right: 0;
 
@@ -191,14 +311,41 @@
     &__avatar {
       flex-shrink: 0;
     }
+
+
+    // --------------------------------------------------
+    // CERRAR SESIÓN - TABLET
+    // --------------------------------------------------
+
+    &__logout-form {
+      margin-top: 1rem;
+    }
+
+    &__logout {
+      min-height: 2.75rem;
+      padding: 0.5rem;
+
+      gap: 0;
+    }
+
+    &__logout-icon {
+      font-size: 1.25rem;
+    }
+
+    &__logout-text {
+      display: none;
+    }
   }
+
 }
 
-// ==========================================
+
+// ======================================================
 // RESPONSIVE - MÓVIL
-// ==========================================
+// ======================================================
 
 @include bp.mobile {
+
   .sidebar {
     position: fixed;
 
@@ -214,14 +361,73 @@
 
     transition: transform 0.3s ease;
 
-    // Cuando JavaScript agregue esta clase
+    // Evitar que el footer quede inaccesible
+    // en dispositivos con pantallas bajas.
+    overflow-y: auto;
+
+
+    // --------------------------------------------------
+    // SIDEBAR ABIERTO
+    // --------------------------------------------------
+
     &--open {
       transform: translateX(0);
     }
 
-    
+
+    // --------------------------------------------------
+    // RESTAURAR ELEMENTOS OCULTOS EN TABLET
+    // --------------------------------------------------
+
+    &__website {
+      display: block;
+    }
+
+    &__user-info {
+      display: flex;
+    }
+
+    &__user {
+      justify-content: flex-start;
+    }
+
+
+    // --------------------------------------------------
+    // CERRAR SESIÓN - MÓVIL
+    // --------------------------------------------------
+
+    &__logout-form {
+      width: 100%;
+      margin-top: 1.25rem;
+    }
+
+    &__logout {
+      width: 100%;
+
+      min-height: 2.75rem;
+
+      justify-content: center;
+      gap: 0.65rem;
+
+      padding: 0.65rem 1rem;
+    }
+
+    &__logout-text {
+      display: inline;
+    }
+
+    &__logout-icon {
+      font-size: 1.25rem;
+    }
+
   }
+
 }
+
+
+// ======================================================
+// OVERLAY DEL SIDEBAR - MÓVIL
+// ======================================================
 
 .sidebar-overlay {
   position: fixed;
