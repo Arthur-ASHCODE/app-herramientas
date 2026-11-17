@@ -12,6 +12,8 @@ return [
     //
     // Hosting en subdirectorio:
     // https://tudominio.com/herramientas/
+    // 'base_path' => '/herramientas',
+    // 'base_path' => '/App/app-base',
 
     'base_path' => '/App/app-base',
 
